@@ -1,0 +1,46 @@
+const lib = require('lib')({token: process.env.STDLIB_SECRET_TOKEN});
+
+await lib.discord.channels['@0.2.0'].messages.create({
+  "channel_id": `${context.params.event.channel_id}`,
+  "content": `test`,
+  "tts": false,
+  "embeds": [
+    {
+      "type": "rich",
+      "title": `title`,
+      "description": `body`,
+      "color": 0xcolor,
+      "fields": [
+        {
+          "name": `name of field`,
+          "value": `value of field`,
+          "inline": true
+        }
+      ],
+      "image": {
+        "url": `urlimage`,
+        "proxy_url": `proxyurlimage`,
+        "height": null,
+        "width": null
+      },
+      "thumbnail": {
+        "url": `thumbnailurl`,
+        "proxy_url": `proxyurlthumbnail`,
+        "height": null,
+        "width": null
+      },
+      "author": {
+        "name": `author-name`,
+        "url": `url-author`,
+        "icon_url": `icon-url-author`,
+        "proxy_icon_url": `proxy-url-author`
+      },
+      "footer": {
+        "text": `footer`,
+        "icon_url": `icon-url-footer`,
+        "proxy_icon_url": `proxy-url-footer`
+      },
+      "url": `https://github.com/lolmanbo/embeded-stuff`
+    }
+  ]
+});
